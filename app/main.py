@@ -16,7 +16,7 @@ app = FastAPI(title="Loan Approval Prediction API")
 from fastapi.staticfiles import StaticFiles
 
 # Mount static folder at root with auto-serving of index.html / for.html
-app.mount("/", StaticFiles(directory="static", html=True), name="frontend")
+app.mount("/static", StaticFiles(directory="static", html=True), name="static")
 with open("app/rf_model.pkl", "rb") as f:
     model = pickle.load(f)
 
