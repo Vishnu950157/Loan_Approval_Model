@@ -12,11 +12,21 @@ import os
 
 app = FastAPI(title="Loan Approval Prediction API")
 
+# Add these if not already imported (you have most, but add if missing)
+from fastapi.staticfiles import StaticFiles
 
+# Mount static folder at root with auto-serving of index.html / for.html
+app.mount("/", StaticFiles(directory="static", html=True), name="frontend")
 with open("app/rf_model.pkl", "rb") as f:
     model = pickle.load(f)
 
+from fastapi.responses import FileResponse
 
+@app.get("/", response_class=FileResponse)
+async def serve_frontend():
+    return FileResponse("static/for.html")
+
+app.mount("/static", StaticFiles(directory="static"), name="static")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -24,7 +34,6 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
 
 class LoanInput(BaseModel):
     Gender: Literal['Male','Female']
