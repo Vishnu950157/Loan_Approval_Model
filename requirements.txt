@@ -1,9 +1,9 @@
-setuptools>=75.1.0
+setuptools==75.1.0
 wheel>=0.44.0
 fastapi
 uvicorn
 pandas
 numpy>=1.26.0  # modern numpy avoids old distutils usage
-scikit-learn>=1.4.2  # or just scikit-learn (no pin) for latest
+scikit-learn==1.4.2  # or just scikit-learn (no pin) for latest
 jinja2
 python-multipart
