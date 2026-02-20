@@ -1,7 +1,7 @@
 Loan Approval Prediction Project
 Project Overview:
 
-This project predicts whether a loan will be approved or rejected based on applicant details such as income, credit history, loan amount, and other relevant factors. It uses a machine learning model and is deployed via FastAPI with a simple web interface.
+This project predicts whether a loan will be approved or rejected with 82% Accuracy based on applicant details such as income, credit history, loan amount, and other relevant factors. It uses a machine learning model and is deployed via FastAPI with a simple web interface.
 
 Features: 
 
@@ -26,3 +26,4 @@ Dataset can be found in app/dataset/loan_data.csv
 
 Summary / Conclusion:
 This Loan Approval Prediction Project demonstrates how machine learning models can be integrated with a FastAPI backend and a web interface to provide real-time predictions. The project covers the complete workflow: data preprocessing, model training, evaluation, and deployment. It serves as a practical example of applying data science and web development skills together and can be further extended with additional features, model improvements, and deployment enhancements.
+
